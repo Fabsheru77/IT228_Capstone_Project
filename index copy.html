@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT228 Capstone Project time to push to GitHub!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.main.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/x-icon" href="images/GEEK.gif" />
+    <style>
+      /* Padding left and right valuses to control the space*/
+      .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        
+        /* Left and Right Section */
+        .left, .right {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+        
+
+      h1, h2 { text-align: center; }
+    </style> 
+  </head>
+
+  <body>
+    <header>
+      <h1 class="page-header">North Greenlake/Licton Springs Rental</h1>
+      <nav class="topnav" id="myTopnav">
+        <a href="index.html" target="_blank">Home</a>
+        <a href="loginForms.html" target="_blank">Login</a>
+        <a href="Small_Meeting_Space.html" target="_blank">Small Meeting Space</a>
+        <a href="Solo_Worker_Space.html">Solo Worker Space</a>
+        <a href="Short_Term_and_Extended_Stay.html" target="_blank">Short Term and Extended Stay</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </nav>
+
+      <picture class="profile">
+        <source media="(min-width: 1200px)" srcset="Seattle.jpg">
+        <source media="(max-width: 501px)" srcset="images/rental.jpg">
+        <img src="Seattle.jpg" alt="Rental" style="width:100%">
+      </picture>
+      
+    </header>
+
+    <nav class="secondary-nav">
+      <a href="#details">Overview</a> |
+      <a href="#amenities">Amenities</a> |
+      <a href="#rates">Rates</a> |
+      <a href="#fees">Fees</a> |
+      <a href="#terms">Terms</a>
+  
+    </nav>
+    <main class="wrapper">
+      <section id="details" class="container">
+          <div class="right picture-container">   
+              
+              <p>Virtual Office: Establish a presence for your business with access to coworking space, mail handling, and call forwarding.</p>
+          </div>
+          <div class="left picture-container">
+              <p>Guest Meeting Rooms: On-demand rooms with support services, AV equipment, and catering available.</p>
+          </div>
+      </section>
+  </main>
+    <main class="wrapper">
+      <section id="details">
+        <h2>Overview</h2>
+        <div class="row">
+          <div class="column">
+            <h2>About the Space</h2>
+            <a href="https://www.peerspace.com/pages/listings/5be5fd4f064119000e539784" target="_blank">
+            Source Link</a>
+            
+            <p>
+              Our attractive, fully equipped conference rooms and business meeting rooms provide an ideal working environment. They include state-of-the-art equipment and capabilities plus free WIFI and free local and long distance calls. And all our meeting facilities come with a thoroughly trained, professional support staff.
+
+              AMENITIES: Free Parking, Interior, Internet Connection (Wired), Water Service, WiFi-Wireless Internet Connection, Writing/White Board, Flat Screen TV.
+
+              LOCATION: We are 30 minutes away from the Seattle Tacoma Airport. There is an abundance of free, entry level parking, as well as plenty of buses and ride share that make getting around simpler and quicker.
+
+              The Canyon Park Shopping Center is the nearest cluster of retailers and there are multiple eateries nearby or within walking distance. The building is not far from the University of Washington. There are also several nature trails in the area including the Sammamish River Trail and the North Creek Trail.
+
+              PARKING: Free parking
+              HOURS: Open during business hours from 8:00 a.m. to 5:00 p.m. with professional receptionists to greet guests.
+            </p>
+             
+            
+          </div>
+          <div class="column features">
+            <h2>Features</h2>
+            <ul>
+              <li><i class="fa fa-bed"></i> Bedrooms: 2</li>
+              <li><i class="fa fa-bath"></i> Bathrooms: 1</li>
+              <li><i class="fa fa-map-marker"></i> Square Feet: variable</li>
+              <li><i class="fa fa-building"></i> Furnished: Yes</li>
+              <li><i class="fa fa-home"></i> Property Type: Short Term and Extended Stay</li>
+              <li><i class="fa fa-building-o"></i> Property Setup: Home</li>
+              <li><i class="fa fa-moon-o"></i> Minimum Stay: 4 hours (meeting space) to 1+ Month</li>
+              <li><i class="fa fa-area-chart"></i> Entry Floor: 1</li>
+              <li><i class="fa fa-paw"></i> Pets: No</li>
+              <li><i class="fa fa-fire"></i> Smoking: No</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="amenities" class="row">
+        <div class="column">
+          <h2>TNE FOLLOWING SERVICES AVIELABLE</h2>
+          <ul>
+            <li>Air Conditioning</li>
+            <li>Heating</li>
+            <li>Washer/Dryer in Building</li>
+            <li>WiFi</li>
+            <li>Cable</li>
+            <li>Streaming Service Included</li>
+            <li>Parking: On-Street Parking</li>
+            <li>Alarm System</li>
+            <li>Carbon Monoxide Alarm</li>
+            <li>Smoke Alarm</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="rates" class="row">
+        <div class="column">
+
+          <h2>Rental Rates</h2>
+          <ul>
+            <li>$2500 one bad room Per Month</li>
+
+            <li>$4000 two bad room Per Month</li
+          </ul>
+        </div>
+      </section>
+
+      <section id="fees" class="row">
+        <div class="column">
+          <h2>Fees and Details</h2>
+          <p>Security Deposit: $2000 (Refundable)</p>
+          <p>Cleaning Fee: $250 (One Time Fee)</p>
+          <p>Background and Credit Check Fee: $42 (One Time Fee per applicant 18+)</p>
+        </div>
+      </section>
+
+      <section id="terms" class="row">
+        <div class="column">
+          <h2>Terms and Details</h2>
+          <p>Move-in ready: high speed WIFI – no need to set up separate electric, gas, water accounts!</p>
+          <p>$3000 PER MONTH (3 MONTH MINIMUM REQUIREMENT)</p>
+          <p>Amenities included: Central Air condition, Internet, Appliances, Furnished, On site laundry (washer/dryer)</p>
+          <p>Rental Requirements: SINGLE occupancy, Verifiable rental history, Pass a background check, Deposit ONE MONTH'S RENT, $50.00 Application fee, 2 forms of ID required, First month's rent required to move in, Credit score of 700 or higher (or above 670 with verified income of 3.5x monthly rent), No open bankruptcies, No past landlord-tenant disputes, No evictions in the last 7 years</p>
+        </div>
+      </section>
+
+    </main>
+      
+
+    <footer>
+      <p><small>&copy; 2023-<span id="this-year"></span> by Group 2 Gale, Ryan and Faris All Rights Reserved ~ 
+        <a id="html-checker" href="#" target="_blank">Check HTML</a>
+        <a id="css-checker" href="#" target="_blank">Check CSS</a>
+      </small></p>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

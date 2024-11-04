@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">y
+    <div class="payment-container">
+        <h1>Payment Gateway</h1>
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="card-name">Cardholder Name</label>
+                <input type="text" id="card-name" name="cardName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="cardNumber" required maxlength="16">
+            </div>
+
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date</label>
+                <input type="month" id="expiry-date" name="expiryDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" required maxlength="3">
+            </div>
+
+            <div class="form-group">
+                <label for="billing-address">Billing Address</label>
+                <textarea id="billing-address" name="billingAddress" required></textarea>
+            </div>
+
+            <button type="submit">Pay Now</button>
+        </form>
+        <p id="payment-status" class="hidden"></p>
+    </div>
+    <script src="payment.js"></script>
+</body>
+</html>

@@ -2,39 +2,133 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">y
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link rel="stylesheet" href="paymentGateway.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/phone.css">
+    <link rel="icon" type="image/x-icon" href="images/GEEK.gif"/>
+
+    <style> 
+        h1, h2 { text-align: center; }
+        .error-message { color: red; font-size: 0.875em; display: none; }
+        input.invalid, textarea.invalid { border-color: red; }
+        #payment-status { color: red; margin-top: 10px; }
+        .hidden { display: none; }
+    
+        /* General form input and textarea styling */
+        .form-group input, 
+        .form-group textarea {
+            width: 80%;
+            max-width: 300px;
+            padding: 3px;
+            font-size: 1em;
+            margin: 3px 0;
+            box-sizing: border-box;
+        }
+    
+        /* Specific rule for Billing Address textarea */
+        #billing-address {
+            width: 80%;
+            max-width: 250px;
+            height: 40px;
+            resize: none;
+        }
+
+        /* Style for header and topnav */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .topnav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+        }
+
+        .topnav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Ensure body content doesn't overlap header */
+        body {
+            margin-top: 60px; /* Adjust this value if the header height changes */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="topnav" id="myTopnav">
+            <a href="index.html" target="_blank">Home</a>
+            <a href="loginForms.html" target="_blank">Login</a>
+            <a href="paymentGateway.html" target="_blank">Payment Gateway</a>
+            <a href="Small_Meeting_Space.html" target="_blank">Small Meeting Space</a>
+            <a href="Solo_Worker_Space.html" target="_blank">Solo Worker Space</a>
+            <a href="Short_Term_and_Extended_Stay.html" target="_blank">Short Term and Extended Stay</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </nav>
+    </header>
+    
     <div class="payment-container">
         <h1>Payment Gateway</h1>
+        
         <form id="payment-form">
             <div class="form-group">
                 <label for="card-name">Cardholder Name</label>
                 <input type="text" id="card-name" name="cardName" required>
             </div>
-
+        
             <div class="form-group">
                 <label for="card-number">Card Number</label>
                 <input type="text" id="card-number" name="cardNumber" required maxlength="16">
             </div>
-
+        
             <div class="form-group">
                 <label for="expiry-date">Expiry Date</label>
                 <input type="month" id="expiry-date" name="expiryDate" required>
             </div>
-
+        
             <div class="form-group">
                 <label for="cvv">CVV</label>
                 <input type="text" id="cvv" name="cvv" required maxlength="3">
             </div>
-
+        
             <div class="form-group">
                 <label for="billing-address">Billing Address</label>
                 <textarea id="billing-address" name="billingAddress" required></textarea>
             </div>
-
+        
             <button type="submit">Pay Now</button>
         </form>
         <p id="payment-status" class="hidden"></p>
     </div>
+    
+    <img src="Payment Page.JPG" alt="Payment Gateway" style="width:75%; height: 90%; display: block; margin: 20px auto;">
+    
     <script src="payment.js"></script>
+
+    <script>
+        // JavaScript for form validation
+    </script>
 </body>
 </html>

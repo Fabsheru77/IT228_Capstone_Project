@@ -9,9 +9,27 @@ body {
     height: 100vh;
 }
 
+    header {
+        background-color: #004d00; /* Dark green background for the header */
+        padding: 1px; /* Adds spacing around the header content */
+}
+
+    header nav {
+        display: flex;
+        justify-content: space-around; /* Evenly distribute nav items */
+        align-items: center;
+}
+
+    header nav a {
+        color: white; /* White text color for nav links */
+        text-decoration: none; /* Removes underline from links */
+        padding: 5px 10px; /* Adds padding inside each nav link */
+        transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
 .payment-container {
     background: #fff;
-    padding: 20px 40px;
+    padding: 10px 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -20,11 +38,11 @@ body {
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 label {

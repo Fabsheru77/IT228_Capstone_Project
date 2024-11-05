@@ -5,22 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Form</title>
     <style>
-
-
-        .form-container, header {
-            background-color: rgb(0, 255, 191);
-            color: #2f00ff;
-            text-decoration-color: #0fc5a7;
-        }
-          h1{
+        /* General styling for the form container */
+        h1 {
             text-align: center;
             background-color: hwb(115 7% 16%);
-          }
+        }
+        header {
+    background-color: #004d00; /* Dark green background for the header */
+    padding: 1px; /* Adds spacing around the header content */
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around; /* Evenly distribute nav items */
+    align-items: center;
+}
+
+header nav a {
+    color: white; /* White text color for nav links */
+    text-decoration: none; /* Removes underline from links */
+    padding: 5px 10px; /* Adds padding inside each nav link */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+header nav a:hover {
+    background-color: #006600; /* Slightly lighter green on hover */
+    border-radius: 3px; /* Rounds the corners on hover */
+}
+
+.topnav .icon {
+    display: none; /* Hide the menu icon by default */
+}
 
         .form-container {
             display: flex;
             align-items: flex-start;
-            gap: 20px;
+            gap: 10px;
+            margin: 10px;
+        }
+
+        /* Styling for the form */
+        .main-form {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        /* Styling for input fields */
+        .main-form input[type="text"],
+        .main-form input[type="submit"] {
+            width: 100%;
+            padding: 2px;
+            margin: 2px 0;
+            box-sizing: border-box;
+            font-size: .8em;
+       }
+
+        /* Submit button styling */
+        .main-form input[type="submit"] {
+            background-color: #2f00ff;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Styling for the moving text */
+        #movingText {
+            background-color: rgb(9, 255, 0);
+            position: absolute;
+            white-space: nowrap;
+            font-size: 35px;
+            font-family: Arial, sans-serif;
+            color: hwb(0 0% 100%);
+            animation: moveText 10s linear infinite;
+        }
+
+        /* Keyframes for text movement */
+        @keyframes moveText {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100vw); }
         }
 
         .main-form {
@@ -40,8 +101,25 @@
             height: auto;
             margin-left: 60%;
         }
-        .submit-button {
-            background-color: #2f00ff;
+        
+        /* Media container styling */
+        .media-container img {
+            width: 200%;
+            height: auto;
+            max-height: 300px;
+            display: flex;
+            margin-right: 1%;
+            padding-left: 10;
+        }
+
+        /* Submitted info image styling */
+        .submitted-info img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
         }
 
         .submitted-info-container {
@@ -59,197 +137,77 @@
             color: black;
             width: 100%;
         }
-
-        .submitted-info img {
-            width: 120%;
-            max-width: 280px;
-            height: auto;
-            margin-left: 40px;
-        }
-
-        #movingText {
-            background-color: rgb(9, 255, 0);
-            position: absolute;
-            white-space: nowrap;
-            font-size: 25px;
-            font-family: Arial, sans-serif;
-            color: black
-        }
-        h1 {text-align: center;}
-        h2 {text-align: center;}
-
-            .section {
-                background-color: gold;
-
-            }
-
     </style>
-        
-
 </head>
-    
-
-
-    
 <body>
     <h1>LOG IN TO PROPERTY MANAGER</h1>
-    <h2>COUSTOMER INFORMATIONS THAT THE RENTAL OFFICE REQUIRED</h2>
-    <a href="https://www.corporatehousingbyowner.com/properties/28396/" target="_blank">
-        Source Link</a><br></br>
-    
+    <header>
+          <nav class="topnav" id="myTopnav">
+           <a href="index.html" target="_blank">Home</a>
+           <a href="loginForms.html" target="_blank">Login</a>
+           <a href="paymentGateway.html" target="_blank">Payment Gateway</a>
+           <a href="Small_Meeting_Space.html" target="_blank">Small Meeting Space</a>
+           <a href="Solo_Worker_Space.html" target="_blank">Solo Worker Space</a>
+           <a href="Short_Term_and_Extended_Stay.html" target="_blank">Short Term and Extended Stay</a>
+           <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+           </nav>
+        </header>
+    <!--a href="https://www.corporatehousingbyowner.com/properties/28396/" target="_blank">
+        CLICK-LINK Link</a><br></br-->
     <div id="movingText">WELCOME TO SEATTLE LUXURY HOUSES!</div>
-    <script>
-        const movingText = document.getElementById('movingText');
-        let positionX = 0;
-        let positionY = window.innerHeight / 2;
-        const speed = 2;
-        const amplitude = 130;
-        const frequency = 0.01;
 
-        function moveText() {
-            positionX += speed;
-            positionY = window.innerHeight / 2 + amplitude * Math.sin(positionX * frequency);
-            if (positionX > window.innerWidth) {
-                positionX = -movingText.offsetWidth;
-            }
-            movingText.style.left = positionX + 'px';
-            movingText.style.top = positionY + 'px';
-            requestAnimationFrame(moveText);
-        }
-
-        moveText();
-    </script>
-
-    
     <div class="form-container">
         <form method="POST" class="main-form" id="bookingForm">
-            <div>
-                <label for="Booking">Booking Reference Number</label><br>
-                <input type="text" name="Booking" id="Booking" placeholder="Booking" required autofocus><br>
-                
-                <label for="RoomNumber">Room Number</label><br>
-                <input type="text" name="Room_Number" id="RoomNumber" placeholder="Room Number" required><br>
-                
-                <label for="FullName">Full Name</label><br>
-                <input type="text" name="Full_Name" id="FullName" placeholder="Full Name" required><br>
+            <label for="Booking">Booking Reference Number</label><br>
+            <input type="text" name="Booking" id="Booking" placeholder="Booking" required autofocus><br>
 
-                <label for="Address">Address</label><br>
-                <input type="text" name="Address" id="Address" placeholder="Address" required><br>
-                
-                <label for="City">City</label><br>
-                <input type="text" name="City" id="City" placeholder="City" required><br>
+            <label for="RoomNumber">Room Number</label><br>
+            <input type="text" name="Room_Number" id="RoomNumber" placeholder="Room Number" required><br>
 
-                <label for="State">State</label><br>
-                <input type="text" name="State" id="State" placeholder="State" required><br>
+            <label for="FullName">Full Name</label><br>
+            <input type="text" name="Full_Name" id="FullName" placeholder="Full Name" required><br>
 
-                <label for="Zip_code">ZipCode</label><br>
-                <input type="text" name="Zip_code" id="ZipCode" placeholder="Zip Code" required><br>
+            <label for="Address">Address</label><br>
+            <input type="text" name="Address" id="Address" placeholder="Address" required><br>
 
-                <label for="EmailAddress">Email Address</label><br>
-                <input type="text" name="Email_Address" id="EmailAddress" placeholder="Email Address" required><br>
-            </div>
-            
-            <div>
-                <input type="submit" value="Submit">
-            </div>
+            <label for="City">City</label><br>
+            <input type="text" name="City" id="City" placeholder="City" required><br>
+
+            <label for="State">State</label><br>
+            <input type="text" name="State" id="State" placeholder="State" required><br>
+
+            <label for="Zip_code">Zip Code</label><br>
+            <input type="text" name="Zip_code" id="ZipCode" placeholder="Zip Code" required><br>
+
+            <label for="EmailAddress">Email Address</label><br>
+            <input type="text" name="Email_Address" id="EmailAddress" placeholder="Email Address" required><br>
+
+            <input type="submit" value="Submit"><br>
         </form>
-        <img src="Login Page.jpg" alt="Rental Office" style="width:50%; height: 20%">
-        <!--img src="Seattle.jpg" alt="Rental" style="width:100%"-->
-        <div class="media-container">
-            <video class="form-video" controls>
-                
-                <!--source src="video.mp4" type="video/mp4-->
-                <a href= "https://www.corporatehousingbyowner.com/properties/28396/"target="blank">CLICK-LINK</a><br>
-                Your browser does not support the video tag.
-            </video>
-           
-        </div>
+        <a href= "https://www.corporatehousingbyowner.com/properties/28396/"target="blank">CLICK-SOURCE-LINK</a><br>
+        <img src="Login Page.jpg" alt="Rental Office" style="width:61%">
+        <!--img src="Login Page.jpg" alt="Rental Office" -->
     </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Handle form submission
+            const formData = new FormData(event.target);
+            const submittedInfoDiv = document.getElementById('submittedInfo');
+
+            submittedInfoDiv.innerHTML = '<h2>Submitted Information</h2>';
+            formData.forEach((value, key) => {
+                submittedInfoDiv.innerHTML += `<p><strong>${key.replace('_', ' ')}:</strong> ${value}</p>`;
+            });
+        });
+    </script>
 
     <div class="submitted-info-container">
         <div class="submitted-info" id="submittedInfo"></div>
         <img src="formsPage.jpg" alt="Rental Office" id="infoImage">
+        
     </div>
-
-<section>   
-        <h2 class="subheader">About The Space</h2>
-      
-        <div class="row">
-        <div class="column">
-          <h2 class="pageID">Luxury View with Pool and Guest House - Corporate Housing Rental</h2>
-     <p>
-        ALL UTILITIES PAID: Enjoy spending time in Austin when you book a home featuring a luxury oasis view with a pool and guest house. The main home has two stories, while the casita has a private entrance. The larger home has four bedrooms, four bathrooms, an executive office overlooking the pool, and spacious dining and living areas. The casita has a one-bedroom studio with a full kitchen, a living area, and an executive office.
-
-        This elegant mid-term corporate home is located on a one-acre lot on a peaceful cul-de-sac with gorgeous greenbelt views. It’s also in the highly rated Leander school district, which is top rated in the State of Texas.
-
-        With a flexible lease of three to 12 months, you can enjoy a fully furnished space with items like linens and kitchenware provided. The area of the home is family-friendly with a safe and welcoming atmosphere, making it ideal for anyone needing a temporary space while renovating or building.
-
-        This corporate home's outdoor living space is perfect for entertainment and relaxation. It offers a fire pit, a heated plunge pool, and seating near fantastic landscaping. Unwind in the hot tub or infinity pool while you enjoy greenbelt views.
-
-        Inside this luxury oasis view with a pool and guest house, you’ll find stylish décor and modern amenities to create an elegant but comfortable environment. From the cozy living areas to the well-equipped kitchen, the entire home is designed to enhance your living experience.
-
-        This home is near Austin’s technology hub, where you can access employers like Apple, Google, 3M, Tesla, Cisco Systems, Cirrus Logic, Oracle, Hewlett-Packard, Bioware, Intel, Samsung, Silicon, National Instruments, Applied Materials, and United Devices.
-     </p>
-    
-
-    <p>
-        Hospitals nearby:
-        --Family Hospital at Lake Travis 10 mins
-        --Ascension Seton Northwest Hospital 22 mins
-        --Baylor Scott & White Medical Center 23 mins
-        
-        --Only 25 minutes from downtown Austin.
-        --35 mins to Austin-Bergstrom International Airport
-        
-        Oversized 2 car garage available with plenty of parking.
-        No smoking and the acceptance of pets is negotiable with the property manager..
-    </p>
-  
-</section> 
-   </div>
-    
-    <div class="column"></div>
-        <nav>
-
-    <script>
-        document.getElementById('bookingForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevents form from submitting in the traditional way
-
-            // Retrieve input values
-            const booking = document.getElementById('Booking').value;
-            const roomNumber = document.getElementById('RoomNumber').value;
-            const fullName = document.getElementById('FullName').value;
-            const address = document.getElementById('Address').value;
-            const city = document.getElementById('City').value;
-            const state = document.getElementById('State').value;
-            const zipCode = document.getElementById('ZipCode').value;
-            const emailAddress = document.getElementById('EmailAddress').value;
-
-            // Display the submitted information
-            const submittedInfoDiv = document.getElementById('submittedInfo');
-            submittedInfoDiv.innerHTML = `
-                <h2>Submitted Information</h2>
-                <p><strong>Booking Reference Number:</strong> ${booking}</p>
-                <p><strong>Room Number:</strong> ${roomNumber}</p>
-                <p><strong>Full Name:</strong> ${fullName}</p>
-                <p><strong>Address:</strong> ${address}</p>
-                <p><strong>City:</strong> ${city}</p>
-                <p><strong>State:</strong> ${state}</p>
-                <p><strong>Zip Code:</strong> ${zipCode}</p>
-                <p><strong>Email Address:</strong> ${emailAddress}</p>
-            `;
-        });
-        
-        
-    </script>
-          
-     <footer>
-        <p><small>&copy; 2023 by 
-        Group 2 Gale, Ryan and Faris All Rights Reserved ~ 
-        <a id="html-checker" href="#">Check HTML</a> ~ 
-        <a id="css-checker" href="#">Check CSS</a></small>
-    </p>
-    </footer>
-   
 </body>
 </html>
